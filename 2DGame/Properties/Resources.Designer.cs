@@ -83,69 +83,9 @@ namespace Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] Manrope_Bold {
-            get {
-                object obj = ResourceManager.GetObject("Manrope_Bold", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Manrope_ExtraBold {
-            get {
-                object obj = ResourceManager.GetObject("Manrope_ExtraBold", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Manrope_ExtraLight {
-            get {
-                object obj = ResourceManager.GetObject("Manrope_ExtraLight", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Manrope_Light {
-            get {
-                object obj = ResourceManager.GetObject("Manrope_Light", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Manrope_Medium {
-            get {
-                object obj = ResourceManager.GetObject("Manrope_Medium", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         public static byte[] Manrope_Regular {
             get {
                 object obj = ResourceManager.GetObject("Manrope_Regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] Manrope_SemiBold {
-            get {
-                object obj = ResourceManager.GetObject("Manrope_SemiBold", resourceCulture);
                 return ((byte[])(obj));
             }
         }

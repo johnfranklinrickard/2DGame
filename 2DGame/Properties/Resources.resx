@@ -124,26 +124,8 @@
   <data name="First_Quarter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\First Quarter.ogg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Manrope_Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manrope-Bold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Manrope_ExtraBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manrope-ExtraBold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Manrope_ExtraLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manrope-ExtraLight.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Manrope_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manrope-Light.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Manrope_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manrope-Medium.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Manrope_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Manrope-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Manrope_SemiBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manrope-SemiBold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Molecular_Dance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Molecular Dance.ogg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
