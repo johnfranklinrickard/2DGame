@@ -13,6 +13,7 @@ namespace Game
             var mode = new VideoMode(1280, 960);
             var window = new RenderWindow(mode, "SFML works!", Styles.Close);
             window.KeyPressed += OnKeyPress;
+            window.MouseWheelScrolled += OnMouseScroll;
             window.Closed += (_, _) => window.Close();
             window.SetFramerateLimit(60);
 
@@ -39,7 +40,6 @@ namespace Game
 
                 window.Display();
 
-
                 var end = clock.ElapsedTime;
                 Console.WriteLine($"Dispatch: {dispatchTime.AsMicroseconds()}us  " +
                     $"Draw: {drawTime.AsMicroseconds()}us  Total: {end.AsMicroseconds()}us");
@@ -48,12 +48,46 @@ namespace Game
             }
         }
 
+        private static void OnMouseScroll(object sender, MouseWheelScrollEventArgs e)
+        {
+            if (e.Wheel != Mouse.Wheel.VerticalWheel)
+                return;
+
+            var window = sender as RenderWindow;
+            var view = window.GetView();
+            float factor = 1f + (0.1f * e.Delta);
+            view.Zoom(factor);
+            window.SetView(view);
+        }
+
         private static void OnKeyPress(object sender, KeyEventArgs e)
         {
-            if (e.Code == Keyboard.Key.Escape)
+            var window = sender as RenderWindow;
+            var view = window.GetView();
+            switch (e.Code)
             {
-                var window = (Window)sender;
-                window.Close();
+                case Keyboard.Key.W:
+                    view.Move(new Vector2f(0f, -1f));
+                    window.SetView(view);
+                    break;
+                case Keyboard.Key.S:
+                    view.Move(new Vector2f(0f, 1f));
+                    window.SetView(view);
+                    break;
+                case Keyboard.Key.A:
+                    view.Move(new Vector2f(-1f, 0f));
+                    window.SetView(view);
+                    break;
+                case Keyboard.Key.D:
+                    view.Move(new Vector2f(1f, 0f));
+                    window.SetView(view);
+                    break;
+                case Keyboard.Key.Escape:
+                    window.Close();
+                    break;
+                default:
+                    Console.WriteLine($"Keypress {e.Code} not used yet.");
+                    break;
             }
         }
     }
