@@ -1,4 +1,5 @@
-﻿using SFML.Audio;
+﻿using Game.Properties;
+using SFML.Audio;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -13,7 +14,7 @@ namespace Game
 
         public static void Main()
         {
-            var mode = new VideoMode(1280, 960);
+            var mode = new VideoMode(1280, 720);
             var window = new RenderWindow(mode, "SFML works!", Styles.Close);
             window.KeyPressed += OnKeyPress;
             window.MouseWheelScrolled += OnMouseScroll;
@@ -23,7 +24,7 @@ namespace Game
 
             shapes.Add(new CircleShape(100f) { FillColor = Color.Green });
 
-            var music = new Music(@"..\..\..\music\First Quarter.ogg");
+            var music = new Music(Resources.First_Quarter);
             music.Play();
 
             Console.WriteLine();
