@@ -3,24 +3,25 @@ using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 using System;
+using System.Collections.Generic;
 
 namespace Game
 {
     internal static class Program
     {
+        public static List<Drawable> shapes = new List<Drawable>();
+
         public static void Main()
         {
             var mode = new VideoMode(1280, 960);
             var window = new RenderWindow(mode, "SFML works!", Styles.Close);
             window.KeyPressed += OnKeyPress;
             window.MouseWheelScrolled += OnMouseScroll;
+            window.MouseButtonPressed += OnMouseClick;
             window.Closed += (_, _) => window.Close();
             window.SetFramerateLimit(60);
 
-            var circle = new CircleShape(100f)
-            {
-                FillColor = Color.Green
-            };
+            shapes.Add(new CircleShape(100f) { FillColor = Color.Green });
 
             var music = new Music(@"..\..\..\music\First Quarter.ogg");
             music.Play();
@@ -35,7 +36,11 @@ namespace Game
                 var dispatchTime = clock.ElapsedTime;
 
                 window.Clear(Color.White);
-                window.Draw(circle);
+                foreach (var shape in shapes)
+                {
+                    window.Draw(shape);
+                }
+
                 var drawTime = clock.ElapsedTime - dispatchTime;
 
                 window.Display();
@@ -46,6 +51,23 @@ namespace Game
 
                 clock.Restart();
             }
+        }
+
+        private static void OnMouseClick(object sender, MouseButtonEventArgs e)
+        {
+            if (e.Button != Mouse.Button.Left)
+                return;
+            var window = sender as RenderWindow;
+            var pixelPos = Mouse.GetPosition(window);
+            var pos = window.MapPixelToCoords(pixelPos);
+            const float radius = 10f;
+            var circle = new CircleShape(radius)
+            {
+                FillColor = Color.Red,
+                Origin = new Vector2f(radius, radius),
+                Position = pos
+            };
+            shapes.Add(circle);
         }
 
         private static void OnMouseScroll(object sender, MouseWheelScrollEventArgs e)
