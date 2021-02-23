@@ -27,6 +27,9 @@ namespace Game
             var music = new Music(Resources.First_Quarter);
             music.Play();
 
+            TextDisplay headsupDisplay = new();
+            shapes.Add(headsupDisplay);
+
             Console.WriteLine();
 
             var clock = new Clock();
