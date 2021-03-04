@@ -15,7 +15,8 @@ namespace Game
         public static void Main()
         {
             var mode = new VideoMode(1280, 720);
-            var window = new RenderWindow(mode, "SFML works!", Styles.Close);
+            var settings = new ContextSettings { AntialiasingLevel = 8 };
+            var window = new RenderWindow(mode, "SFML works!", Styles.Close, settings);
             window.KeyPressed += OnKeyPress;
             window.MouseWheelScrolled += OnMouseScroll;
             window.MouseButtonPressed += OnMouseClick;
