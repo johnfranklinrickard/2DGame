@@ -58,11 +58,11 @@ namespace Game
             }
         }
 
-        private static void OnMouseClick(object sender, MouseButtonEventArgs e)
+        private static void OnMouseClick(object? sender, MouseButtonEventArgs e)
         {
             if (e.Button != Mouse.Button.Left)
                 return;
-            var window = sender as RenderWindow;
+            var window = (RenderWindow)sender!;
             var pixelPos = Mouse.GetPosition(window);
             var pos = window.MapPixelToCoords(pixelPos);
             const float radius = 10f;
@@ -75,21 +75,21 @@ namespace Game
             shapes.Add(circle);
         }
 
-        private static void OnMouseScroll(object sender, MouseWheelScrollEventArgs e)
+        private static void OnMouseScroll(object? sender, MouseWheelScrollEventArgs e)
         {
             if (e.Wheel != Mouse.Wheel.VerticalWheel)
                 return;
 
-            var window = sender as RenderWindow;
+            var window = (RenderWindow)sender!;
             var view = window.GetView();
             float factor = 1f + (0.1f * e.Delta);
             view.Zoom(factor);
             window.SetView(view);
         }
 
-        private static void OnKeyPress(object sender, KeyEventArgs e)
+        private static void OnKeyPress(object? sender, KeyEventArgs e)
         {
-            var window = sender as RenderWindow;
+            var window = (RenderWindow)sender!;
             var view = window.GetView();
             switch (e.Code)
             {
